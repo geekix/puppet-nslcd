@@ -1,0 +1,40 @@
+# This file is being managed by puppet
+# module: 'nslcd'
+
+# The user and group nslcd should run as.
+uid <%= @uid %>
+gid <%= @gid %>
+
+# The location at which the LDAP server(s) should be reachable.
+<% @ldap_uris.each do |ldap_uri| -%>
+uri <%= ldap_uri %>
+<% end -%>
+
+# The LDAP protocol version to use.
+ldap_version <%= @ldap_version %>
+
+# The search base that will be used for all queries.
+base <%= @ldap_search_base %>
+
+<% if @ldap_binddn and @ldap_bindpw -%>
+# The DN to bind with for normal lookups.
+binddn <%= @ldap_binddn %>
+bindpw <%= @ldap_bindpw %>
+<% end -%>
+
+# SSL options
+ssl <%= @ldap_ssl %>
+tls_reqcert <%= @ldap_tls_reqcert %>
+<% if @ldap_tls_cacertfile -%>
+tls_cacertfile <%= @ldap_tls_cacertfile %>
+<% end -%>
+
+# The search scope.
+scope <%= @ldap_search_scope %>
+
+<% if @ldap_filters.length > 0 -%>
+# Custom search filters
+<% @ldap_filters.each do |map, filter| -%>
+filter <%= map %> <%= filter %>
+<% end -%>
+<% end -%>
