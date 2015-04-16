@@ -18,6 +18,16 @@
       "operatingsystemrelease":[ "12.04", "14.04"]
     }
   ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
