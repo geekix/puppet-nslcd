@@ -26,3 +26,4 @@ RSpec.configure do |c|
     PuppetlabsSpec::Files.cleanup
   end
 end
+
