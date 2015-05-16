@@ -1,21 +1,32 @@
 {
   "name": "OpenConceptConsulting-nslcd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "OpenConceptConsulting",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
   "source": "https://github.com/OpenConceptConsulting/puppet-nslcd",
   "project_page": "https://github.com/OpenConceptConsulting/puppet-nslcd",
   "issues_url": "https://github.com/OpenConceptConsulting/puppet-nslcd/issues",
-  "tags": ["nslcd","pam","nss","ldap"],
+  "tags": [
+    "nslcd",
+    "pam",
+    "nss",
+    "ldap"
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
-      "operatingsystemrelease":[ "6.0", "7.0"]
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease":[ "12.04", "14.04"]
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
     }
   ],
   "requirements": [
@@ -35,4 +46,3 @@
     }
   ]
 }
-
