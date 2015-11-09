@@ -23,7 +23,7 @@ class nslcd::params {
   $default_service_name = 'nslcd'
 
   case $::osfamily {
-    Debian: {
+    'Debian': {
       $config        = $default_config
       $package_name  = $default_package_name
       $service_name  = $default_service_name
