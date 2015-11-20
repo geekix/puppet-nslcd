@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'nslcd' do
 
-  {'Ubuntu' => 'Debian', 'Debian' => 'Debian'}.each do |system, family|
+  {'RedHat' => 'Debian', 'Ubuntu' => 'Debian', 'Debian' => 'Debian'}.each do |system, family|
     context "when on system #{system}" do
       let :facts do
         {
