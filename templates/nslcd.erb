@@ -28,6 +28,9 @@ tls_reqcert <%= @ldap_tls_reqcert %>
 <% if @ldap_tls_cacertfile -%>
 tls_cacertfile <%= @ldap_tls_cacertfile %>
 <% end -%>
+<% if @ldap_tls_cacertdir -%>
+tls_cacertdir <%= @ldap_tls_cacertdir %>
+<% end -%>
 
 # The search scope.
 scope <%= @ldap_search_scope %>
@@ -38,3 +41,65 @@ scope <%= @ldap_search_scope %>
 filter <%= map %> <%= filter %>
 <% end -%>
 <% end -%>
+
+<% if @ldap_maps.length > 0 -%>
+# Custom search attributes
+<% @ldap_maps.each do |map, filter| -%>
+<% filter.each do | attribute | -%>
+map <%= map %> <%= attribute %>
+<% end -%>
+<% end -%>
+<% end -%>
+
+<% if @bind_timelimit -%>
+# Specifies the distinguished name with which to bind to the directory server for lookups.
+# The default is  to  bind anonymously.
+bind_timelimit <%= @bind_timelimit %>
+<% end -%>
+
+<% if @timelimit -%>
+# Specifies  the time limit (in seconds) to wait for a response from the LDAP server.  
+# A value of zero (0), which is the default, is to wait indefinitely for searches to be completed.
+timelimit <%= @timelimit %>
+<% end -%>
+
+<% if @idle_timelimit -%>
+# Specifies the period if inactivity (in seconds) after which the connection to the 
+# LDAP server will be closed.  The default is not to time out connections.
+idle_timelimit <%= @idle_timelimit %>
+<% end -%>
+
+<% if @reconnect_sleeptime -%>
+# Specifies the number of seconds to sleep when connecting to all LDAP servers fails.  
+# By default 1 second is waited between the first failure and the first retry.
+reconnect_sleeptime <%= @reconnect_sleeptime %>
+<% end -%>
+
+<% if @reconnect_retrytime -%>
+# Specifies the time after which the LDAP server is considered to be permanently unavailable.   
+# Once this time is reached retries will be done only once per this time period.  The default 
+# value is 10 seconds.
+reconnect_retrytime <%= @reconnect_retrytime %>
+<% end -%>
+
+<% if @pagesize -%>
+# Set this to a number greater than 0 to request paged results from the LDAP server 
+# in accordance with RFC2696.  The default (0) is to not request paged results.
+pagesize <%= @pagesize %>
+<% end -%>
+
+<% if @referrals -%>
+# Specifies whether automatic referral chasing should be enabled.  The default behaviour 
+# is to chase referrals.
+referrals <%= @referrals %>
+<% end -%>
+
+<% if @nss_initgroups_ignoreusers -%>
+# This option prevents group membership lookups through LDAP for the specified users. 
+# This can be useful in case of unavailability of the LDAP server. 
+<% @nss_initgroups_ignoreusers.each do | user | -%>
+nss_initgroups_ignoreusers <%= user %> 
+<% end -%>
+<% end -%>
+
+
