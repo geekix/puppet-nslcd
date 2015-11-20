@@ -22,15 +22,15 @@ class nslcd::params {
   $default_config             = '/etc/nslcd.conf'
   $bind_timelimit             = 10
   $timelimit                  = 0
-  $idle_timelimit             = 0 
+  $idle_timelimit             = 0
   $reconnect_sleeptime        = 1
   $reconnect_retrytime        = 10
   $pagesize                   = 0
-  $referrals                  = 'on' 
+  $referrals                  = 'on'
   $nss_initgroups_ignoreusers = undef
 
   case $::osfamily {
-    Debian: {
+    'Debian': {
       $default_package_name = 'nslcd'
       $config               = $default_config
       $package_name         = $default_package_name
@@ -41,7 +41,7 @@ class nslcd::params {
       $config_group         = 'nslcd'
       $config_mode          = '0640'
     }
-    RedHat: {
+    'RedHat': {
       $default_package_name = 'nss-pam-ldapd'
       $config               = $default_config
       $package_name         = $default_package_name
