@@ -48,6 +48,33 @@ class { 'nslcd':
 }
 ```
 
+An example in YAML using hashes/arrays:
+
+```
+nslcd::ldap_uris:
+  - 'ldap://ldap1.mycompany.com/'
+  - 'ldap://ldap2.mycompany.com/'
+nslcd::ldap_search_base: 'dc=acme,dc=example,dc=org'
+nslcd::ldap_binddn: 'binduser@acme.example.org'
+nslcd::ldap_bindpw: 'password'
+nslcd::ldap_filters:
+  - group: " (&(objectClass=group)(gidNumber=*))"
+  - passwd: " (&(objectClass=user)(!(objectClass=computer))(uidNumber=*)(unixHomeDirectory=*))"
+  - shadow: " (&(objectClass=user)(!(objectClass=computer))(uidNumber=*)(unixHomeDirectory=*))"
+nslcd::ldap_maps:
+  group: 'uniqueMember member'
+  passwd:  
+    - 'homedirectory unixHomeDirectory'
+    - 'uid sAMAccountName'
+    - 'gecos displayName'
+  shadow:
+    - 'shadowLastChange pwdLastSet'
+    - 'uid sAMAccountName'
+nslcd::nss_initgroups_ignoreusers: 
+  - 'root'  
+  - 'ALLLOCAL'  
+
+```
 
 
 
