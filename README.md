@@ -35,10 +35,23 @@ However, we recommend that you declare the class and override a few parameters:
 
 ```
 class { 'nslcd':
-  ldap_uris => ['ldap://ldap.mycompany.com'],
-  ldap_ssl  => 'on',
+  ldap_uris    => ['ldap://ldap.mycompany.com'],
+  ldap_ssl     => 'on',
+  ldap_filters => { group  => '(&(objectClass=group)(gidNumber=*))',
+                    passwd => '(&(objectClass=user)(!(objectClass=computer))(uidNumber=*)(unixHomeDirectory=*))',
+                    shadow => '(&(objectClass=user)(!(objectClass=computer))(uidNumber=*)(unixHomeDirectory=*))',
+                  },
+  ldap_maps    => { group  => 'uniqueMember member',
+                    passwd => ['homedirectory unixHomeDirectory', 'uid sAMAccountName', 'gecos displayName', ],
+                    shadow => ['shadowLastChange pwdLastSet', 'uid sAMAccountName', ],
+                  },
 }
 ```
+
+
+
+
+
 
 ## Reference
 
