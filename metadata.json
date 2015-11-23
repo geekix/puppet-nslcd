@@ -17,9 +17,9 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "6.0",
-        "7.0",
-        "8.0"
+        "6",
+        "7",
+        "8"
       ]
     },
     {
