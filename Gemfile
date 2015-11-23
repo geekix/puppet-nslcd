@@ -1,20 +1,20 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 group :development, :unit_tests do
-  gem 'rake', '~> 10.1.0',       :require => false
-  gem 'rspec-core', '~> 3.1.0',  :require => false
-  gem 'rspec-puppet',            :require => false
+  gem 'rspec-core', '~> 3.1.7',  :require => false
+  gem 'rspec-puppet', '~> 2.1',  :require => false
   gem 'puppetlabs_spec_helper',  :require => false
-  gem 'puppet-lint', '< 1.1.0',  :require => false
-  gem 'metadata-json-lint',      :require => false
   gem 'simplecov',               :require => false
   gem 'puppet_facts',            :require => false
   gem 'json',                    :require => false
+  gem 'metadata-json-lint',      :require => false
+  gem 'puppet-lint', '< 1.1.0',  :require => false
 end
 
 group :system_tests do
-  gem 'beaker-rspec',  :require => false
-  gem 'serverspec',    :require => false
+  gem 'beaker-rspec',                  :require => false
+  gem 'serverspec',                    :require => false
+  gem 'beaker-puppet_install_helper',  :require => false
 end
 
 if facterversion = ENV['FACTER_GEM_VERSION']
