@@ -23,7 +23,7 @@ class nslcd::params {
   $default_service_name = 'nslcd'
 
   case $::osfamily {
-    'debian': {
+    'Debian': {
       $config       = $default_config
       $package_name = $default_package_name
       $service_name = $default_service_name
@@ -33,8 +33,18 @@ class nslcd::params {
       $config_group = 'nslcd'
       $config_mode  = '0640'
     }
+    'RedHat': {
+      $config       = $default_config
+      $package_name = 'nss-pam-ldapd'
+      $service_name = $default_service_name
+      $uid          = 'nslcd'
+      $gid          = 'ldap'
+      $config_user  = 'root'
+      $config_group = 'root'
+      $config_mode  = '0600'
+    }
     default: {
-      fail("the ${module_name} module is not supported on an ${::osfamily} based system.")
+      fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
     }
   }
 

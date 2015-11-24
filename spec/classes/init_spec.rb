@@ -2,13 +2,14 @@ require 'spec_helper'
 
 describe 'nslcd' do
 
-  {'Ubuntu' => 'Debian', 'Debian' => 'Debian'}.each do |system, family|
+  {'Ubuntu' => 'Debian', 'Debian' => 'Debian', 'CentOS' => 'RedHat', 'RedHat' => 'RedHat' }.each do |system, family|
     context "when on system #{system}" do
-      let :facts do
-        {
+      facts = {
           :osfamily        => family,
           :operatingsystem => system,
-        }
+      }
+      let :facts do
+        facts
       end
 
       it { should contain_class('nslcd') }
@@ -16,10 +17,19 @@ describe 'nslcd' do
       it { should contain_class('nslcd::config') }
       it { should contain_class('nslcd::service') }
 
-      it {
-        should contain_package('nslcd')
-        should contain_service('nslcd')
-      }
+
+      case facts[:osfamily]
+      when 'Debian'
+        it {
+          should contain_package('nslcd')
+          should contain_service('nslcd')
+        }
+      when 'RedHat'
+        it {
+          should contain_package('nss-pam-ldapd')
+          should contain_service('nslcd')
+        }
+      end
     end
   end
 
