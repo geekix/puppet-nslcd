@@ -28,6 +28,12 @@
         "12.04",
         "14.04"
       ]
+    },
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "CentOS"
     }
   ],
   "requirements": [
