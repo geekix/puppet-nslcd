@@ -19,33 +19,30 @@ class nslcd::params {
   $ldap_tls_reqcert           = 'allow'
   $ldap_tls_cacertfile        = undef
   $ldap_tls_cacertder         = undef
-  $default_config             = '/etc/nslcd.conf'
   $bind_timelimit             = 10
   $timelimit                  = 0
-  $idle_timelimit             = 0 
+  $idle_timelimit             = 0
   $reconnect_sleeptime        = 1
   $reconnect_retrytime        = 10
   $pagesize                   = 0
-  $referrals                  = 'on' 
+  $referrals                  = 'on'
   $nss_initgroups_ignoreusers = undef
 
   case $::osfamily {
-    Debian: {
-      $default_package_name = 'nslcd'
-      $config               = $default_config
-      $package_name         = $default_package_name
-      $service_name         = $default_service_name
+    'Debian': {
+      $config               = '/etc/nslcd.conf'
+      $package_name         = 'nslcd'
+      $service_name         = 'nslcd'
       $uid                  = 'nslcd'
       $gid                  = 'nslcd'
       $config_user          = 'root'
       $config_group         = 'nslcd'
       $config_mode          = '0640'
     }
-    RedHat: {
-      $default_package_name = 'nss-pam-ldapd'
-      $config               = $default_config
-      $package_name         = $default_package_name
-      $service_name         = $default_service_name
+    'RedHat': {
+      $config               = '/etc/nslcd.conf'
+      $package_name         = 'nss-pam-ldapd'
+      $service_name         = 'nslcd'
       $uid                  = 'nslcd'
       $gid                  = 'root'
       $config_user          = 'root'
@@ -56,7 +53,6 @@ class nslcd::params {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
     }
   }
-  $default_service_name = 'nslcd'
 
 }
 
