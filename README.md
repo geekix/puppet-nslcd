@@ -76,9 +76,20 @@ nslcd::nss_initgroups_ignoreusers:
 
 ```
 
+## Caveats When Used With Other Modules
+
+Since this module manages (on Red Hat) /etc/nslcd, package 'nss-pam-ldapd' and service 'nslcd', it's entirely likely that you'll have duplicate resource definitions when using other modules (such as https://github.com/Mylezeem/puppet-authconfig) that also manage these resources.
+
+Set $service_name and/or $package_name to 'undef' to prevent nslcd module from managing those resources.  Example YAML:
 
 
+```
+# Undefine $package_name and $service_name so that we don't
+# manage those resources with nslcd module.
+nslcd::package_name: ''
+nslcd::service_name: ''
 
+```
 
 ## Reference
 

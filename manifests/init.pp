@@ -58,13 +58,34 @@ class nslcd (
   # do some validation
   $onoff = '^(on|off)$'
 
-  validate_re($referrals, $onoff )
+  validate_re($referrals, $onoff)
 
-  anchor { 'nslcd::begin': } ->
-  class { 'nslcd::install': } ->
-  class { 'nslcd::config': } ~>
-  class { 'nslcd::service': } ->
-  anchor { 'nslcd::end': }
+  # Due to the possibility of duplicate resource declarations with other modules
+  # (ie: https://github.com/Mylezeem/puppet-authconfig), check to see if 
+  # $package_name is undefined.  If it is undefined then don't attempt to 
+  # install it.  The same is true for $service_name.
+
+  if $package_name == undef and $service_name == undef {
+    anchor { 'nslcd::begin': } ->
+    class { 'nslcd::config': } ~>
+    anchor { 'nslcd::end': }
+  } elsif $package_name == undef {
+    anchor { 'nslcd::begin': } ->
+    class { 'nslcd::config': } ~>
+    class { 'nslcd::service': } ->
+    anchor { 'nslcd::end': }
+  } elsif $service_name == undef {
+    anchor { 'nslcd::begin': } ->
+    class { 'nslcd::install': } ->
+    class { 'nslcd::config': } ~>
+    anchor { 'nslcd::end': }
+  } else {
+    anchor { 'nslcd::begin': } ->
+    class { 'nslcd::install': } ->
+    class { 'nslcd::config': } ~>
+    class { 'nslcd::service': } ->
+    anchor { 'nslcd::end': }
+  }
 
 }
 
