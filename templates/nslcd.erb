@@ -6,7 +6,7 @@ uid <%= @uid %>
 gid <%= @gid %>
 
 # The location at which the LDAP server(s) should be reachable.
-uri <% @ldap_uris.each do |ldap_uri| -%><%= ldap_uri -%> <% end -%>
+uri <% @ldap_uris.sort.each do |ldap_uri| -%><%= ldap_uri -%> <% end -%>
 
 # The LDAP protocol version to use.
 ldap_version <%= @ldap_version %>
@@ -35,15 +35,15 @@ scope <%= @ldap_search_scope %>
 
 <% if @ldap_filters.length > 0 -%>
 # Custom search filters
-<% @ldap_filters.each do |map, filter| -%>
+<% @ldap_filters.sort.each do |map, filter| -%>
 filter <%= map %> <%= filter %>
 <% end -%>
 <% end -%>
 
 <% if @ldap_maps.length > 0 -%>
 # Custom search attributes
-<% @ldap_maps.each do |map, filter| -%>
-<% filter.each do | attribute | -%>
+<% @ldap_maps.sort.each do |map, filter| -%>
+<% filter.sort.each do | attribute | -%>
 map <%= map %> <%= attribute %>
 <% end -%>
 <% end -%>
@@ -95,7 +95,7 @@ referrals <%= @referrals %>
 <% if @nss_initgroups_ignoreusers -%>
 # This option prevents group membership lookups through LDAP for the specified users. 
 # This can be useful in case of unavailability of the LDAP server. 
-<% @nss_initgroups_ignoreusers.each do | user | -%>
+<% @nss_initgroups_ignoreusers.sort.each do | user | -%>
 nss_initgroups_ignoreusers <%= user %> 
 <% end -%>
 <% end -%>
