@@ -38,3 +38,12 @@ scope <%= @ldap_search_scope %>
 filter <%= map %> <%= filter %>
 <% end -%>
 <% end -%>
+
+<% if @ldap_maps.length > 0 -%>
+# Custom attribute mapping
+<%   @ldap_maps.each do |map, a| -%>
+<%     a.each do |attribute, newattribute| -%>
+map <%= map %> <%= attribute %> <%= newattribute %>
+<%     end -%>
+<%   end -%>
+<% end -%>
