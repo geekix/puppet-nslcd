@@ -47,7 +47,9 @@ filter <%= map %> <%= filter %>
 
 <% if @ldap_maps.length > 0 -%>
 # Custom maps
-<% @ldap_maps.sort.each do |key, value| -%>
-map <%= key %> <%= value %>
-<% end -%>
+<%   @ldap_maps.each do |map, a| -%>
+<%     a.each do |attribute, newattribute| -%>
+map <%= map %> <%= attribute %> <%= newattribute %>
+<%     end -%>
+<%   end -%>
 <% end -%>
