@@ -38,3 +38,10 @@ scope <%= @ldap_search_scope %>
 filter <%= map %> <%= filter %>
 <% end -%>
 <% end -%>
+
+<% if @ldap_maps.length > 0 -%>
+# Custom maps
+<% @ldap_maps.each do |key, value| -%>
+map <%= key %> <%= value %>
+<% end -%>
+<% end -%>
