@@ -19,6 +19,7 @@ class nslcd (
   $ldap_bindpw         = $nslcd::params::ldap_bindpw,
   $ldap_search_base    = $nslcd::params::ldap_search_base,
   $ldap_search_scope   = $nslcd::params::ldap_search_scope,
+  $config_options      = $nslcd::params::config_options,
   $ldap_filters        = $nslcd::params::ldap_filters,
   $ldap_maps           = $nslcd::params::ldap_maps,
   $ldap_ssl            = $nslcd::params::ldap_ssl,

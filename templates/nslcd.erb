@@ -32,6 +32,14 @@ tls_cacertfile <%= @ldap_tls_cacertfile %>
 # The search scope.
 scope <%= @ldap_search_scope %>
 
+<% @config_options.sort.each do |k,v| -%>
+<% Array(v).each do |av| -%>
+<% if ![nil, '', :undef].include?(av) -%>
+<%= %Q(#{k} #{av}) %>
+<% end -%>
+<% end -%>
+<% end -%>
+
 <% if @ldap_filters.length > 0 -%>
 # Custom search filters
 <% @ldap_filters.each do |map, filter| -%>
