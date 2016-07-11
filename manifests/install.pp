@@ -3,8 +3,10 @@
 # Installs the nslcd package.
 class nslcd::install inherits nslcd {
 
-  package { $nslcd::package_name:
-    ensure => $nslcd::package_ensure,
+  if $nslcd::package_manage {
+    package { $nslcd::package_name:
+      ensure => $nslcd::package_ensure,
+    }
   }
 
 }

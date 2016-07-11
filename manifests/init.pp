@@ -4,9 +4,11 @@
 class nslcd (
   $package_ensure      = $nslcd::params::package_ensure,
   $package_name        = $nslcd::params::package_name,
+  $package_manage      = $nslcd::params::package_manage,
   $service_ensure      = $nslcd::params::service_ensure,
   $service_enable      = $nslcd::params::service_enable,
   $service_name        = $nslcd::params::service_name,
+  $service_manage      = $nslcd::params::service_manage,
   $uid                 = $nslcd::params::uid,
   $gid                 = $nslcd::params::gid,
   $config              = $nslcd::params::config,

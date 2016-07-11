@@ -4,8 +4,10 @@
 class nslcd::params {
 
   $package_ensure = present
+  $package_manage = true
   $service_ensure = running
   $service_enable = true
+  $service_manage = true
 
   $ldap_uris           = ['ldap:///']
   $ldap_version        = '3'

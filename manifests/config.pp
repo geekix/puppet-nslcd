@@ -12,4 +12,3 @@ class nslcd::config inherits nslcd {
   }
 
 }
-
