@@ -42,14 +42,14 @@ scope <%= @ldap_search_scope %>
 
 <% if @ldap_filters.length > 0 -%>
 # Custom search filters
-<% @ldap_filters.each do |map, filter| -%>
+<% @ldap_filters.sort.each do |map, filter| -%>
 filter <%= map %> <%= filter %>
 <% end -%>
 <% end -%>
 
 <% if @ldap_maps.length > 0 -%>
 # Custom maps
-<% @ldap_maps.each do |key, value| -%>
+<% @ldap_maps.sort.each do |key, value| -%>
 map <%= key %> <%= value %>
 <% end -%>
 <% end -%>
