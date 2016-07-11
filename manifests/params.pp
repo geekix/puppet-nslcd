@@ -13,7 +13,9 @@ class nslcd::params {
   $ldap_bindpw         = undef
   $ldap_search_base    = ''
   $ldap_search_scope   = 'subtree'
+  $config_options      = {}
   $ldap_filters        = {}
+  $ldap_maps           = {}
   $ldap_ssl            = 'off'
   $ldap_tls_reqcert    = 'allow'
   $ldap_tls_cacertfile = undef
@@ -49,4 +51,3 @@ class nslcd::params {
   }
 
 }
-
