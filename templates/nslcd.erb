@@ -6,9 +6,7 @@ uid <%= @uid %>
 gid <%= @gid %>
 
 # The location at which the LDAP server(s) should be reachable.
-<% @ldap_uris.each do |ldap_uri| -%>
-uri <%= ldap_uri %>
-<% end -%>
+uri <%= @ldap_uris.sort.join(' ') %>
 
 # The LDAP protocol version to use.
 ldap_version <%= @ldap_version %>
