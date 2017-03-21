@@ -51,4 +51,10 @@ filter <%= map %> <%= filter %>
 map <%= key %> <%= value %>
 <% end -%>
 <% end -%>
+
+<% if @ldap_options.length > 0 -%>
+# Additional options
+<% @ldap_options.each do |name, value| -%>
+<%= name %> <%= value %>
+<% end -%>
 <% end -%>

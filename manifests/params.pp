@@ -21,6 +21,7 @@ class nslcd::params {
   $ldap_ssl            = 'off'
   $ldap_tls_reqcert    = 'allow'
   $ldap_tls_cacertfile = undef
+  $ldap_options        = {}
 
   $default_config       = '/etc/nslcd.conf'
   $default_package_name = 'nslcd'
