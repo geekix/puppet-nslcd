@@ -27,6 +27,7 @@ class nslcd (
   $ldap_ssl            = $nslcd::params::ldap_ssl,
   $ldap_tls_reqcert    = $nslcd::params::ldap_tls_reqcert,
   $ldap_tls_cacertfile = $nslcd::params::ldap_tls_cacertfile,
+  $ldap_options        = $nslcd::params::ldap_options,
 ) inherits nslcd::params {
 
   # Input validation
