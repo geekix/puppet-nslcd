@@ -1,6 +1,6 @@
 # nslcd
 
-[![Build Status](https://travis-ci.org/OpenConceptConsulting/puppet-nslcd.svg?branch=master)](https://travis-ci.org/OpenConceptConsulting/puppet-nslcd)
+[![Build Status](https://travis-ci.org/geekix/puppet-nslcd.svg?branch=master)](https://travis-ci.org/geekix/puppet-nslcd)
 
 **Looking for co-maintainers! Open an issue if you're interested**
 
