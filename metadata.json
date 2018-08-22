@@ -1,12 +1,12 @@
 {
-  "name": "OpenConceptConsulting-nslcd",
+  "name": "puppet-nslcd",
   "version": "0.2.0",
-  "author": "OpenConceptConsulting",
+  "author": "Geekix",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
-  "source": "https://github.com/OpenConceptConsulting/puppet-nslcd",
-  "project_page": "https://github.com/OpenConceptConsulting/puppet-nslcd",
-  "issues_url": "https://github.com/OpenConceptConsulting/puppet-nslcd/issues",
+  "source": "https://github.com/geekix/puppet-nslcd",
+  "project_page": "https://github.com/geekix/puppet-nslcd",
+  "issues_url": "https://github.com/geekix/puppet-nslcd/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
