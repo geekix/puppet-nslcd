@@ -40,10 +40,10 @@ class nslcd (
   validate_re($ldap_tls_reqcert, $valid_ldap_tls_reqcert)
   validate_re($ldap_search_scope, $valid_ldap_search_scope)
 
-  anchor { 'nslcd::begin': } ->
-  class { 'nslcd::install': } ->
-  class { 'nslcd::config': } ~>
-  class { 'nslcd::service': } ->
-  anchor { 'nslcd::end': }
+  anchor { 'nslcd::begin': }
+  -> class { 'nslcd::install': }
+  -> class { 'nslcd::config': }
+  ~> class { 'nslcd::service': }
+  -> anchor { 'nslcd::end': }
 
 }
