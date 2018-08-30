@@ -1,3 +1,5 @@
 --format
---force-color
+s
+--colour
+mtime
 --backtrace
