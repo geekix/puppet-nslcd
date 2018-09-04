@@ -39,7 +39,7 @@ However, we recommend that you declare the class and override a few parameters:
 
 ```
 class { 'nslcd':
-  ldap_uris => ['ldap01://ldap.mycompany.com','ldap02://ldap.mycompany.com'],
+  ldap_uris => ['ldap://ldap01.mycompany.com:389','ldap://ldap02.mycompany.com:389'],
   ldap_search_base => 'dc=company,dc=com'
 }
 ```
