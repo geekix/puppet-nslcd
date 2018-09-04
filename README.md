@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/geekix/puppet-nslcd.svg?branch=master)](https://travis-ci.org/geekix/puppet-nslcd)
 
-**Looking for co-maintainers! Open an issue if you're interested**
-
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -37,11 +35,22 @@ Simply include/contain/required/declare the nslcd class.
 It includes a few sane defaults, so it should work out of the box.
 However, we recommend that you declare the class and override a few parameters:
 
+* In the module
+
 ```
 class { 'nslcd':
-  ldap_uris => ['ldap://ldap.mycompany.com'],
-  ldap_ssl  => 'on',
+  ldap_uris => ['ldap01://ldap.mycompany.com','ldap02://ldap.mycompany.com'],
+  ldap_search_base => 'dc=company,dc=com'
 }
+```
+
+* In hieradata
+
+```
+nslcd::ldap_uris:
+  - 'ldap://ldap01.company.com:389'
+  - 'ldap://ldap02.company.com:389'
+nslcd::ldap_search_base: 'dc=company,dc=com'
 ```
 
 ## Reference
