@@ -13,7 +13,8 @@ class nslcd::params {
   $ldap_version        = '3'
   $ldap_binddn         = undef
   $ldap_bindpw         = undef
-  $ldap_search_base    = ''
+  $ldap_search_base    = undef
+  $ldap_group_base     = undef
   $ldap_search_scope   = 'subtree'
   $config_options      = {}
   $ldap_filters        = {}

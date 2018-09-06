@@ -14,6 +14,10 @@ ldap_version <%= @ldap_version %>
 
 # The search base that will be used for all queries.
 base <%= @ldap_search_base %>
+<% if @ldap_group_base -%>
+base group <%= @ldap_group_base -%>
+<% end -%>
+
 
 <% if @ldap_binddn and @ldap_bindpw -%>
 # The DN to bind with for normal lookups.
