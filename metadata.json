@@ -1,7 +1,7 @@
 {
   "name": "puppet-nslcd",
   "version": "0.3.0",
-  "author": "Geekix",
+  "author": "geekix",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
   "source": "https://github.com/geekix/puppet-nslcd",
