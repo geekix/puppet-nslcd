@@ -59,6 +59,8 @@ nslcd::ldap_search_base: 'dc=company,dc=com'
 
 ## Limitations
 
+/!\ Important information: The module will be updated to work with Puppet 4.x. The next release will be tested and compatible with Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Debian 8 and Debian 9 /!\
+
 The module has been tested with Ubuntu 12.04 and 14.04, Debian 6 and 7, and Puppet 3.7.
 It should work Puppet 3.x.
 For additional OS support, you should contribute it back upstream!
