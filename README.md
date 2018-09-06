@@ -59,13 +59,12 @@ nslcd::ldap_search_base: 'dc=company,dc=com'
 
 ## Limitations
 
-/!\ Important information: The module will be updated to work with Puppet 4.x. The next release will be tested and compatible with Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Debian 8 and Debian 9 /!\
+The module has been tested with Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Debian 8, Debian 9 and Puppet 4.10.
+It should work with Puppet 4.x.
 
-The module has been tested with Ubuntu 12.04 and 14.04, Debian 6 and 7, and Puppet 3.7.
-It should work Puppet 3.x.
 For additional OS support, you should contribute it back upstream!
 
-The module doesn't support setting the `rootbinddn` and `rootbindpw` attributes, but it can be easily added.
+The module doesn't support setting the `rootbinddn` and `rootbindpw` attributes yet, it will added in a next version.
 
 ## Development
 
