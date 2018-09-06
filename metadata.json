@@ -1,6 +1,6 @@
 {
   "name": "puppet-nslcd",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Geekix",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
@@ -17,16 +17,16 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "6",
-        "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "12.04",
-        "14.04"
+        "14.04",
+        "16.04",
+	"18.04"
       ]
     },
     {
