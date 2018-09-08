@@ -1,5 +1,5 @@
 {
-  "name": "puppet-nslcd",
+  "name": "geekix-nslcd",
   "version": "0.3.0",
   "author": "geekix",
   "summary": "Installs and configures nslcd.",
