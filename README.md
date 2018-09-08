@@ -64,7 +64,7 @@ It should work with Puppet 4.x.
 
 For additional OS support, you should contribute it back upstream!
 
-The module doesn't support setting the `rootbinddn` and `rootbindpw` attributes yet, it will added in a next version.
+The module doesn't support setting the `rootbinddn` and `rootbindpw` attributes yet, it will be added in a next version.
 
 ## Development
 
