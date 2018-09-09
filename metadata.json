@@ -28,12 +28,6 @@
         "16.04",
 	"18.04"
       ]
-    },
-    {
-      "operatingsystem": "RedHat"
-    },
-    {
-      "operatingsystem": "CentOS"
     }
   ],
   "requirements": [
