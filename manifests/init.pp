@@ -30,10 +30,12 @@ class nslcd (
   Optional[String[1]]                            $ldap_tls_cacertfile = undef,
 ) inherits nslcd::params {
 
-  anchor { 'nslcd::begin': }
-  -> class { 'nslcd::install': }
-  -> class { 'nslcd::config': }
-  ~> class { 'nslcd::service': }
-  -> anchor { 'nslcd::end': }
+  contain nslcd::install
+  contain nslcd::config
+  contain nslcd::service
+
+  Class['nslcd::install']
+  -> Class['nslcd::config']
+  ~> Class['nslcd::service']
 
 }
