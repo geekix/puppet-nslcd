@@ -2,7 +2,7 @@
 #
 # This class manages the nslcd server and service.
 class nslcd (
-  Variant[Boolean, Enum['true', 'false', 'present', 'absent']] $package_ensure  = $nslcd::params::package_ensure,
+  Variant[Boolean, String[1]] $package_ensure                                   = $nslcd::params::package_ensure,
   String $package_name                                                          = $nslcd::params::package_name,
   Boolean $package_manage                                                       = $nslcd::params::package_manage,
   Variant[Boolean, Enum['true', 'false', 'running', 'stopped']] $service_ensure = $nslcd::params::service_ensure,
