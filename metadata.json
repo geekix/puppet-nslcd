@@ -1,6 +1,6 @@
 {
   "name": "geekix-nslcd",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "geekix",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
