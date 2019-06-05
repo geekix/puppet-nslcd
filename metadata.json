@@ -42,7 +42,7 @@
     "nss",
     "ldap"
   ],
-  "pdk-version": "1.7.0",
-  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.7.0-0-g57412ed"
+  "pdk-version": "1.10.0",
+  "template-url": "file:///C:/Program Files/Puppet Labs/DevelopmentKit/share/cache/pdk-templates.git#1.10.0",
+  "template-ref": "1.10.0-0-gbba9ac3"
 }
