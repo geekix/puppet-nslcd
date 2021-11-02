@@ -1,7 +1,5 @@
 # puppet-nslcd
 
-[![Build Status](https://travis-ci.org/geekix/puppet-nslcd.svg?branch=master)](https://travis-ci.org/geekix/puppet-nslcd)
-
 #### Table of Contents
 
 1. [Overview](#overview)
