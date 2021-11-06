@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.4.2 (2021-05-11)
+
+### Addition
+
+- New parameters (bind_timelimit, timelimit, idle_timelimit, reconnect_sleeptime, reconnect_retrytime)
+- New Hiera example files
+
+### Changed
+
+- Documentation reviewed and improved
+- ldap_search_base parameter is now optional
+- Module converted to the latest version of PDK (2.2.0)
+
 ## 0.4.1 (2019-03-11)
 
 ### [Related PR : https://github.com/geekix/puppet-nslcd/pull/18]

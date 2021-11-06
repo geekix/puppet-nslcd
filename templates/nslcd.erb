@@ -12,15 +12,18 @@ uri <%= @ldap_uris.sort.join(' ') %>
 # The LDAP protocol version to use.
 ldap_version <%= @ldap_version %>
 
+<% if @ldap_search_base -%>
 # The search base that will be used for all queries.
 base <%= @ldap_search_base %>
-<% if @ldap_group_base -%>
-base group <%= @ldap_group_base -%>
 <% end -%>
 
+<% if @ldap_group_base -%>
+# The group search base that will be used for all queries.
+base group <%= @ldap_group_base %>
+<% end -%>
 
 <% if @ldap_binddn and @ldap_bindpw -%>
-# The DN to bind with for normal lookups.
+# The DN to bind with the LDAP server.
 binddn <%= @ldap_binddn %>
 bindpw <%= @ldap_bindpw %>
 <% end -%>
@@ -34,14 +37,6 @@ tls_cacertfile <%= @ldap_tls_cacertfile %>
 
 # The search scope.
 scope <%= @ldap_search_scope %>
-
-<% @config_options.sort.each do |k,v| -%>
-<% Array(v).each do |av| -%>
-<% if ![nil, '', :undef].include?(av) -%>
-<%= %Q(#{k} #{av}) %>
-<% end -%>
-<% end -%>
-<% end -%>
 
 <% if @ldap_filters.length > 0 -%>
 # Custom search filters
@@ -58,3 +53,26 @@ map <%= map %> <%= attribute %> <%= newattribute %>
 <%     end -%>
 <%   end -%>
 <% end -%>
+
+# Timeouts
+<% if @bind_timelimit -%>
+bind_timelimit <%= @bind_timelimit %>
+<% end -%>
+timelimit <%= @timelimit %>
+<% if @idle_timelimit -%>
+idle_timelimit <%= @idle_timelimit %>
+<% end -%>
+reconnect_sleeptime <%= @reconnect_sleeptime %>
+reconnect_retrytime <%= @reconnect_retrytime %>
+
+<% if @config_options.length > 0 -%>
+# Extended configuration
+<% @config_options.sort.each do |k,v| -%>
+<% Array(v).each do |av| -%>
+<% if ![nil, '', :undef].include?(av) -%>
+<%= %Q(#{k} #{av}) %>
+<% end -%>
+<% end -%>
+<% end -%>
+<% end -%>
+

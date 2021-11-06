@@ -1,6 +1,6 @@
 {
   "name": "geekix-nslcd",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "geekix",
   "summary": "Installs and configures nslcd.",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 4.0.0 < 7.0.0"
+      "version_requirement": ">= 4.0.0 < 8.1.0"
     }
   ],
   "operatingsystem_support": [
@@ -18,7 +18,9 @@
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "8",
-        "9"
+        "9",
+        "10",
+        "11"
       ]
     },
     {
@@ -26,7 +28,8 @@
       "operatingsystemrelease": [
         "14.04",
         "16.04",
-        "18.04"
+        "18.04",
+        "20.04"
       ]
     }
   ],
@@ -40,9 +43,10 @@
     "nslcd",
     "pam",
     "nss",
-    "ldap"
+    "ldap",
+    "authentication"
   ],
-  "pdk-version": "1.7.0",
-  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.7.0-0-g57412ed"
+  "pdk-version": "2.2.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#main",
+  "template-ref": "tags/2.3.0-0-g8aaceff"
 }

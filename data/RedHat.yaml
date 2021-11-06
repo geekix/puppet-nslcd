@@ -1,0 +1,28 @@
+---
+
+nslcd::package_ensure: 'present'
+nslcd::package_name: 'nss-pam-ldapd'
+nslcd::package_manage: true
+nslcd::service_ensure: 'running'
+nslcd::service_enable: true
+nslcd::service_name: 'nslcd'
+nslcd::service_manage: true
+nslcd::uid: 'nslcd'
+nslcd::gid: 'ldap'
+nslcd::config: '/etc/nslcd.conf'
+nslcd::config_user: 'root'
+nslcd::config_group: 'root'
+nslcd::config_mode: '0600'
+nslcd::ldap_uris:
+  - 'ldap://ldap01.company.com:389'
+  - 'ldap://ldap01.company.com:389'
+nslcd::ldap_version: '3'
+nslcd::ldap_binddn: 'cn=bind_user,ou=user,dc=company,dc=com'
+nslcd::ldap_bindpw: 'secure_bind_user_password'
+nslcd::ldap_search_base: 'dc=company,dc=com'
+nslcd::ldap_group_base: 'ou=groups,dc=company,dc=com'
+nslcd::ldap_search_scope: 'subtree'
+nslcd::ldap_ssl: 'off'
+nslcd::ldap_tls_reqcert: 'allow'
+nslcd::reconnect_sleeptime: 1
+nslcd::reconnect_retrytime: 10
