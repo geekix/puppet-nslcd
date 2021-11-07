@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.4.2 (2021-05-11)
+## 0.4.3 (2021-11-07)
+
+### Changed
+
+- Add support for RedHat RHEL in the metadata
+
+## 0.4.2 (2021-11-05)
 
 ### Addition
 
