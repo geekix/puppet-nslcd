@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run :
           name: prerequisites
-          command :bundle install
+          command: bundle install
       - run:
           name: test
           command: bundle exec rake validate lint
