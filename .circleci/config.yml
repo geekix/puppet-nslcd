@@ -5,28 +5,19 @@ orbs:
   node: circleci/node@2
 
 jobs:
-  build:
-    docker:
-      - image: cimg/ruby:2.7-node
-    steps:
-      - checkout
-      - run : bundle install
   test:
     docker:
       - image: cimg/ruby:2.7-node
-    environment:
-      BUNDLE_RETRY: "3"
-      RAILS_ENV: test
     steps:
       - checkout
+      - run :
+          name: prerequisites
+          command :bundle install
       - run:
           name: test
           command: bundle exec rake validate lint
 workflows:
   version: 2
-  build_and_test:
+  test:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - test
