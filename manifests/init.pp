@@ -137,7 +137,7 @@ inherits nslcd::params
   contain nslcd::install
   contain nslcd::config
   contain nslcd::service
-  
+
   Class['nslcd::install']
   -> Class['nslcd::config']
   ~> Class['nslcd::service']
