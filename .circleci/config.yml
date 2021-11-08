@@ -16,6 +16,11 @@ jobs:
       - run:
           name: verif_lint
           command: bundle exec rake validate lint
+          
+      - run:
+          name: verif_parser
+          command: puppet parser validate manifests/init.pp
+
 workflows:
   version: 2
   verif:
