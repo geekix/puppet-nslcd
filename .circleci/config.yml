@@ -5,7 +5,7 @@ orbs:
   node: circleci/node@2
 
 jobs:
-  test:
+  verif:
     docker:
       - image: cimg/ruby:2.7-node
     steps:
@@ -14,10 +14,10 @@ jobs:
           name: prerequisites
           command: bundle install
       - run:
-          name: test
+          name: verif_lint
           command: bundle exec rake validate lint
 workflows:
   version: 2
-  test:
+  verif:
     jobs:
-      - test
+      - verif
