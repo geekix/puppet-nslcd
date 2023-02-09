@@ -11,7 +11,7 @@ class nslcd::config inherits nslcd
       owner     => $nslcd::config_user,
       group     => $nslcd::config_group,
       mode      => $nslcd::config_mode,
-      show_diff => false
+      show_diff => false,
       content   => template('nslcd/nslcd.erb'),
   }
 }
