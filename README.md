@@ -74,6 +74,7 @@ config | Stdlib::Unixpath | /etc/nslcd.conf | Sets the path of the config file.
 config_user | String | root | Sets the owner of the config file.
 config_group | String | Depends on the Linux distrib | Sets the group of the config file.
 config_mode | Stdlib::Filemode | Depends on the Linux distrib | Permission of the config file.
+config_show_diff | Boolean | false | If set to true, the diff of the configuration file will be shown in the logs and reports. For security reason, it is disabled by default.
 ldap_uris | Array[String] | ldap:/// | Array of LDAP servers.
 ldap_version | Enum['2','3'] | 3 | Sets the LDAP version to use.
 ldap_binddn | String | undef | Sets the DN (distinguished name) to bind to the LDAP servers.
@@ -127,8 +128,8 @@ threads 10
 The module has been tested with :
 
 * Ubuntu 14.04 / 16.04 / 18.04 / 20.04
-* Debian 8 / 9 / 10 / 11
-* Puppet 4 / 5 / 6
+* Debian 8 / 9 / 10 / 11 / 12
+* Puppet 4 / 5 / 6 / 7
 
 ## Development
 
