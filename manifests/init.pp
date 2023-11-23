@@ -113,6 +113,7 @@ class nslcd
   String[1]                                      $config_user         = 'root',
   String[1]                                      $config_group        = $nslcd::params::config_group,
   Stdlib::Filemode                               $config_mode         = $nslcd::params::config_mode,
+  Boolean                                        $config_show_diff    = false,
   Array[String[1]]                               $ldap_uris           = ['ldap:///'],
   Enum['2','3']                                  $ldap_version        = '3',
   Optional[String[1]]                            $ldap_binddn         = undef,
