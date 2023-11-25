@@ -4,10 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 0.4.4 (2023-11-23)
 
+### Addition
+
+- Add the show_diff parameter and set value to false by default for security reasons. Thanks @MaxHerrmannSVA for the PR (https://github.com/geekix/puppet-nslcd/pull/24)
+
 ### Changed
 
 - Update stdlib dependencies and supported Debian versions. Thanks @virus2500 for the PR (https://github.com/geekix/puppet-nslcd/pull/25)
-- Set the show_diff value to false by default for security reasons. Thanks @MaxHerrmannSVA for the PR (https://github.com/geekix/puppet-nslcd/pull/24)
 
 ## 0.4.3 (2021-11-07)
 
